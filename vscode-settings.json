@@ -1,0 +1,86 @@
+{
+  "workbench.colorTheme": "Ayu Tokyo Night",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "vim.leader": "<Space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Tab>"],
+      "after": [">", ">"]
+    },
+    {
+      "before": ["<S-Tab>"],
+      "after": ["<", "<"]
+    },
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // keep cursor centered on scroll
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+
+    // keep cursor centered on search next/prev
+    { "before": ["n"], "after": ["n", "z", "z", "z", "v"] },
+    { "before": ["N"], "after": ["N", "z", "z", "z", "v"] },
+
+    // yank to system clipboard
+    { "before": ["leader", "y"], "after": ["\"", "+", "y"] },
+    { "before": ["leader", "Y"], "after": ["\"", "+", "Y"] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Tab>"],
+      "after": [">"]
+    },
+    {
+      "before": ["<S-Tab>"],
+      "after": ["<"]
+    },
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+
+    // move highlighted lines up/down
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+
+    // paste without replacing register
+    { "before": ["leader", "p"], "after": ["\"", "_", "d", "P"] },
+
+    // yank to system clipboard
+    { "before": ["leader", "y"], "after": ["\"", "+", "y"] }
+  ],
+  "claudeCode.preferredLocation": "panel",
+  "editor.lineNumbers": "relative"
+}
